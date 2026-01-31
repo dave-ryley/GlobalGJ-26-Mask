@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://cig4v528qte7i"]
+
+[ext_resource type="Script" uid="uid://b1kikb7gjvjkh" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_qtqvp"]
+
+[resource]
+script = ExtResource("1_qtqvp")
+name = "Robo [Diagnosis]"
+color = Color(0.32983518, 0.8544068, 0.61351484, 1)
+metadata/_custom_type_script = "uid://b1kikb7gjvjkh"

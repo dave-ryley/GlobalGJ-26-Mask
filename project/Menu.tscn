@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cvske00hiquxk"]
+
+[ext_resource type="Script" uid="uid://dntr3nxfo6ltp" path="res://code/menu.gd" id="1_uubjt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lthh4"]
+font_size = 43
+
+[node name="Menu" type="Node2D" unique_id=871266339]
+script = ExtResource("1_uubjt")
+
+[node name="Control" type="Control" parent="." unique_id=1231962727]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="Title" type="Label" parent="Control" unique_id=1507239124]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 283.0
+offset_top = 316.0
+offset_right = -232.0
+offset_bottom = -345.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(0.5, 0.5)
+text = "Robo-Therapist Unmasks your Issues"
+label_settings = SubResource("LabelSettings_lthh4")
+horizontal_alignment = 1
+
+[node name="StartGame" type="Button" parent="Control" unique_id=1320656275]
+layout_mode = 0
+offset_left = 565.0
+offset_top = 415.0
+offset_right = 736.0
+offset_bottom = 465.0
+text = "Start New Game"
+
+[connection signal="pressed" from="Control/StartGame" to="." method="_on_start_game_pressed"]

@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://doaxhi46usygc" path="res://code/main.gd" id="1_fos0i"]
 [ext_resource type="Script" uid="uid://b8s5lbiu5jkp6" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="2_3dxm6"]
+[ext_resource type="Script" uid="uid://wdeqjd72oexh" path="res://code/PatientScenario.gd" id="2_lgr22"]
 [ext_resource type="Script" uid="uid://q0mpty8au6eu" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="3_lgr22"]
-[ext_resource type="Resource" uid="uid://dwkcrlvdlls8d" path="res://dialogue/test-dialogue.tres" id="3_trn2v"]
+[ext_resource type="Resource" uid="uid://g2ngwid6iydr" path="res://patient-scenarios/patient-01.tres" id="3_trn2v"]
+[ext_resource type="Resource" uid="uid://tyx8eveq2cwe" path="res://patient-scenarios/patient-02.tres" id="4_03owx"]
 [ext_resource type="Script" uid="uid://dskldyr11gvwp" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="4_trn2v"]
 [ext_resource type="Script" uid="uid://bqi8tba3wtry0" path="res://addons/dialogue_nodes/objects/bbcodeMatrix.gd" id="5_03owx"]
 
@@ -18,7 +20,7 @@ script = ExtResource("5_03owx")
 
 [node name="Node2D" type="Node2D" unique_id=604476953]
 script = ExtResource("1_fos0i")
-demo = ExtResource("3_trn2v")
+scenarios = Array[ExtResource("2_lgr22")]([ExtResource("3_trn2v"), ExtResource("4_03owx")])
 
 [node name="Control" type="Control" parent="." unique_id=90789762]
 layout_mode = 3
@@ -28,27 +30,54 @@ offset_bottom = 720.0
 
 [node name="DialogueBox" type="Panel" parent="Control" unique_id=246560683]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 39.0
-offset_top = -316.0
-offset_right = -27.0
-offset_bottom = -24.0
+anchors_preset = -1
+anchor_right = 0.5
+offset_left = 30.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = 200.0
 grow_horizontal = 2
-grow_vertical = 0
 script = ExtResource("2_3dxm6")
 start_id = "Start"
 custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_wkp8b"), SubResource("RichTextEffect_20pc6"), SubResource("RichTextEffect_5vvyt")])
 metadata/_custom_type_script = "uid://b8s5lbiu5jkp6"
 
-[node name="Button" type="Button" parent="Control" unique_id=210714370]
+[node name="QuitToMenu" type="Button" parent="Control" unique_id=1547027457]
+visible = false
 layout_mode = 0
-offset_left = 535.0
-offset_top = 324.0
-offset_right = 724.0
-offset_bottom = 366.0
-text = "Test Dialogue"
+offset_left = 547.0
+offset_top = 288.0
+offset_right = 736.0
+offset_bottom = 330.0
+text = "Quit to Menu"
 
-[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[node name="PatientInfo" type="RichTextLabel" parent="Control" unique_id=1768600686]
+layout_mode = 0
+offset_left = 931.0
+offset_top = 303.0
+offset_right = 1216.0
+offset_bottom = 372.0
+theme_override_font_sizes/normal_font_size = 24
+text = "[color=#ff00ff]Patient Name[/color]"
+
+[node name="EventText" type="Label" parent="Control" unique_id=2212937]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -141.0
+offset_bottom = -99.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Announcement Text Here"
+horizontal_alignment = 1
+
+[node name="SequenceDelay" type="Timer" parent="." unique_id=727727574]
+one_shot = true
+
+[connection signal="dialogue_processed" from="Control/DialogueBox" to="." method="_on_dialogue_processed"]
+[connection signal="dialogue_signal" from="Control/DialogueBox" to="." method="_on_dialogue_signal"]
+[connection signal="pressed" from="Control/QuitToMenu" to="." method="_on_quit_to_menu_pressed"]
+[connection signal="timeout" from="SequenceDelay" to="." method="_on_sequence_delay_timeout"]

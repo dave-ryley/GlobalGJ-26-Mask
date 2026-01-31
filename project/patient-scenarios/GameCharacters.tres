@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CharacterList" format=3 uid="uid://cdk2u0370xi7i"]
+
+[ext_resource type="Script" uid="uid://b1kikb7gjvjkh" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_7r1aa"]
+[ext_resource type="Script" uid="uid://bdouicexjnnuq" path="res://addons/dialogue_nodes/objects/CharacterList.gd" id="2_jkjlu"]
+[ext_resource type="Resource" uid="uid://i2db2tpoom2v" path="res://patient-scenarios/Characters/Character-Patient-01.tres" id="2_ourf8"]
+[ext_resource type="Resource" uid="uid://n1xpfplcjqmq" path="res://patient-scenarios/Characters/Character-Patient-02.tres" id="3_p7cxx"]
+[ext_resource type="Resource" uid="uid://bdxgdtq86l1vr" path="res://patient-scenarios/Characters/Character-Robo-Sad.tres" id="4_jt8q3"]
+[ext_resource type="Resource" uid="uid://cgtw7x4bjakym" path="res://patient-scenarios/Characters/Character-Robo-Happy.tres" id="5_u152t"]
+[ext_resource type="Resource" uid="uid://c4ye7sorf0yeh" path="res://patient-scenarios/Characters/Character-Robo-Blank.tres" id="6_4vega"]
+[ext_resource type="Resource" uid="uid://brdeoe0gviusk" path="res://patient-scenarios/Characters/Character-Robo-Stern.tres" id="7_xa11w"]
+[ext_resource type="Resource" uid="uid://b7usv3sjc7xc7" path="res://patient-scenarios/Characters/Character-Robo-Joker.tres" id="8_pd24h"]
+[ext_resource type="Resource" uid="uid://cig4v528qte7i" path="res://patient-scenarios/Characters/Character-Robo-Diagnosis.tres" id="9_ahqfl"]
+
+[resource]
+script = ExtResource("2_jkjlu")
+characters = Array[ExtResource("1_7r1aa")]([ExtResource("2_ourf8"), ExtResource("3_p7cxx"), ExtResource("4_jt8q3"), ExtResource("5_u152t"), ExtResource("6_4vega"), ExtResource("7_xa11w"), ExtResource("8_pd24h"), ExtResource("9_ahqfl")])
+metadata/_custom_type_script = "uid://bdouicexjnnuq"

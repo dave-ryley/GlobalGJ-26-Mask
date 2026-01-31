@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PatientScenario" format=3 uid="uid://g2ngwid6iydr"]
+
+[ext_resource type="Script" uid="uid://wdeqjd72oexh" path="res://code/PatientScenario.gd" id="1_d7tne"]
+[ext_resource type="Resource" uid="uid://dwkcrlvdlls8d" path="res://dialogue/test-dialogue.tres" id="1_h1duy"]
+[ext_resource type="Resource" uid="uid://i2db2tpoom2v" path="res://patient-scenarios/Characters/Character-Patient-01.tres" id="2_ybny8"]
+
+[resource]
+script = ExtResource("1_d7tne")
+patient = ExtResource("2_ybny8")
+dialogue_data = ExtResource("1_h1duy")
+metadata/_custom_type_script = "uid://wdeqjd72oexh"

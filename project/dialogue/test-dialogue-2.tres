@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://dwkcrlvdlls8d"]
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://do5we0daxnxjr"]
 
-[ext_resource type="Script" uid="uid://nirrpg4jiyww" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_klsba"]
+[ext_resource type="Script" uid="uid://nirrpg4jiyww" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_l0cni"]
 
 [resource]
-script = ExtResource("1_klsba")
+script = ExtResource("1_l0cni")
 starts = {
 "START": &"0_1"
 }
@@ -20,7 +20,7 @@ nodes = {
 0: {
 "condition": {},
 "link": &"1_2",
-"text": "Test Option 1"
+"text": "[Happy] Test Option 1"
 },
 1: {
 "condition": {},
@@ -33,8 +33,8 @@ nodes = {
 "text": "Test Option 3"
 }
 },
-"size": Vector2(300, 371),
-"speaker": 3
+"size": Vector2(300, 411),
+"speaker": 2
 },
 &"1_2": {
 "dialogue": "You did test option 1",
@@ -46,8 +46,8 @@ nodes = {
 "text": "Discover Root Cause"
 }
 },
-"size": Vector2(300, 291),
-"speaker": 0
+"size": Vector2(300, 331.00003),
+"speaker": 1
 },
 &"1_3": {
 "dialogue": "You did test option 2",
@@ -59,8 +59,8 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 251),
-"speaker": 0
+"size": Vector2(300, 291.00018),
+"speaker": 1
 },
 &"1_4": {
 "dialogue": "You did test option 3",
@@ -72,8 +72,8 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 251),
-"speaker": 0
+"size": Vector2(300, 290.99988),
+"speaker": 1
 },
 &"1_5": {
 "dialogue": "You Discovered the Root Cause
@@ -91,8 +91,8 @@ nodes = {
 "text": "Trigger Bad Resolution"
 }
 },
-"size": Vector2(340, 331),
-"speaker": 5
+"size": Vector2(340, 371.00003),
+"speaker": 7
 },
 &"3_1": {
 "link": &"1_5",

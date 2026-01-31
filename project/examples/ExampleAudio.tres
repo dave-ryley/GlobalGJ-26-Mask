@@ -15,7 +15,7 @@ nodes = {
 },
 &"1_1": {
 "dialogue": "Oh hey!",
-"offset": Vector2(220, 0),
+"offset": Vector2(320, 0),
 "options": {
 0: {
 "condition": {},
@@ -23,12 +23,12 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 291),
+"size": Vector2(300, 291.00006),
 "speaker": 1
 },
 &"1_2": {
 "dialogue": "This is an example of setting up audio to play when a dialogue is playing.",
-"offset": Vector2(560, 0),
+"offset": Vector2(680, -40),
 "options": {
 0: {
 "condition": {},
@@ -36,13 +36,13 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 291),
+"size": Vector2(380, 420.00006),
 "speaker": 1
 },
 &"1_3": {
 "dialogue": "[wait]Funny thing is, you don't have to do anything in the dialogue editor.[/wait][br]
 [wait time=1]Its just the signal connected in the scene's script[/wait]",
-"offset": Vector2(900, 0),
+"offset": Vector2(1140, 0),
 "options": {
 0: {
 "condition": {},
@@ -55,7 +55,7 @@ nodes = {
 },
 &"1_4": {
 "dialogue": "[wait speed=4]Also...[/wait][wait time=2] you can mess around with the wait speed and time and the sound plays accordingly![/wait]",
-"offset": Vector2(1240, 0),
+"offset": Vector2(1520, -40),
 "options": {
 0: {
 "condition": {},
@@ -63,7 +63,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 291),
+"size": Vector2(340.00006, 400),
 "speaker": 1
 }
 }
