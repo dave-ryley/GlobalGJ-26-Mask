@@ -9,7 +9,7 @@ signal dialogue_started(id : String)
 ## Triggered when a single dialogue block has been processed.
 ## Passes [param speaker] which can be a [String] or a [param Character] resource, a [param dialogue] containing the text to be displayed
 ## and an [param options] list containing the texts for each option.
-signal dialogue_processed(speaker : Variant, dialogue : String, options : Array[String])
+signal dialogue_processed(speaker : Variant, dialogue : String, options : Array[String], emotion : int, robo_notes : String)
 ## Triggered when an option is selected
 signal option_selected(idx : int)
 ## Triggered when a SignalNode is encountered while processing the dialogue.
@@ -21,6 +21,7 @@ signal variable_changed(variable_name : String, value)
 ## Triggered when a dialogue tree has ended processing and reached the end of the dialogue.
 ## The [DialogueBox] may hide based on the [member hide_on_dialogue_end] property.
 signal dialogue_ended
+signal robo_notes_start(notes : String)
 
 
 @export_group('Data')
@@ -145,13 +146,14 @@ var options_container : BoxContainer
 ## Indication that the option buttons are external
 var options_are_external : bool
 
+var next_robo_notes : String
+
 # [param DialogueParser] used for parsing the dialogue [member data].
 # NOTE: Using [param DialogueParser] as a child instead of extending from it, because [DialogueBox] needs to extend from [Panel].
 var _dialogue_parser : DialogueParser
 var _main_container : BoxContainer
 var _sub_container : BoxContainer
 var _wait_effect : RichTextWait
-
 
 func _enter_tree():
 	if get_child_count() > 0:
@@ -298,7 +300,7 @@ func _on_dialogue_started(id : String):
 	dialogue_started.emit(id)
 
 
-func _on_dialogue_processed(speaker : Variant, dialogue : String, options : Array[String]):
+func _on_dialogue_processed(speaker : Variant, dialogue : String, options : Array[String], emotion : int, robo_notes : String):
 	# set speaker
 	speaker_label.text = ''
 	portrait.texture = null
@@ -332,7 +334,9 @@ func _on_dialogue_processed(speaker : Variant, dialogue : String, options : Arra
 	options_container.get_child(0).icon = next_icon if options.size() == 1 and options[0] == '' else null
 	options_container.hide()
 	
-	dialogue_processed.emit(speaker, dialogue, options)
+	next_robo_notes = robo_notes
+	
+	dialogue_processed.emit(speaker, dialogue, options, emotion, robo_notes)
 
 
 func _on_option_selected(idx : int):
@@ -348,10 +352,15 @@ func _on_variable_changed(variable_name : String, value):
 
 
 func _on_dialogue_ended():
-	if hide_on_dialogue_end: hide()
+	if hide_on_dialogue_end: 
+		hide()
+		options_container.hide()
 	dialogue_ended.emit()
 
 
 func _on_wait_finished():
 	options_container.show()
 	options_container.get_child(0).grab_focus()
+	if not next_robo_notes.is_empty():
+		robo_notes_start.emit(next_robo_notes)
+		next_robo_notes = ''

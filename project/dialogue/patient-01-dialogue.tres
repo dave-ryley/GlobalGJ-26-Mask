@@ -15,6 +15,7 @@ nodes = {
 },
 &"1_1": {
 "dialogue": "So <human patient>.. you've come in with [rainbow] Anxiety [/rainbow] issues I see, want to tell me more about that?",
+"emotion": -1,
 "offset": Vector2(600, 460),
 "options": {
 0: {
@@ -23,49 +24,53 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 359.99973),
+"robo_notes": "Ugh, I'm so bored...",
+"size": Vector2(320, 620),
 "speaker": 4
 },
 &"1_10": {
 "dialogue": "For years,.. stages, stage lights, crowds... as far back as I can remember. Oh god... the lights,... they're back... aaa.. I can't do this!",
+"emotion": -1,
 "offset": Vector2(4720, 500),
 "options": {
 0: {
 "condition": {},
-"link": &"1_11",
-"text": "[Happy] <Calm him down>"
+"link": "END",
+"text": "[Blank] <Silently let him spiral>"
 },
 1: {
 "condition": {},
 "link": "END",
-"text": "[Blank] <Silently let him spiral>"
+"text": "[Sad] Oh no!"
 },
 2: {
 "condition": {},
 "link": "END",
-"text": "[Sad] Oh no!"
+"text": "[Stern] Get it together!"
 },
 3: {
 "condition": {},
 "link": "END",
-"text": "[Stern] Get it together!"
+"text": "[Joker] <Crack a Joke>"
 },
 4: {
 "condition": {},
 "link": "END",
-"text": "[Joker] <Crack a Joke>"
+"text": "[Diagnosis] 5 weeks away from lights!"
 },
 5: {
 "condition": {},
-"link": "END",
-"text": "[Diagnosis] 5 weeks away from lights!"
+"link": &"1_11",
+"text": "[Happy] <Calm him down>"
 }
 },
-"size": Vector2(479.99976, 600),
+"robo_notes": "",
+"size": Vector2(480.0005, 659),
 "speaker": 0
 },
 &"1_11": {
 "dialogue": "Hey, hey.. its ok. [wave]Deep human breaths[/wave] now. Think back, what was a good childhood memory?",
+"emotion": -1,
 "offset": Vector2(5300, 500),
 "options": {
 0: {
@@ -74,11 +79,13 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(380, 379.99997),
+"robo_notes": "",
+"size": Vector2(380, 419),
 "speaker": 3
 },
 &"1_12": {
 "dialogue": "Big company events can be stresful. Was there something at the event that was making you [rainbow]Anxious[/rainbow]?",
+"emotion": -1,
 "offset": Vector2(1440, 880),
 "options": {
 0: {
@@ -87,11 +94,13 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 340),
+"robo_notes": "",
+"size": Vector2(300.00012, 419.00006),
 "speaker": 2
 },
 &"1_13": {
 "dialogue": "Assimilation events are the best! It couldn't have possibly been anything to do with that...",
+"emotion": -1,
 "offset": Vector2(1420, 40),
 "options": {
 0: {
@@ -100,12 +109,14 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 380),
+"robo_notes": "",
+"size": Vector2(300, 419),
 "speaker": 3
 },
 &"1_14": {
 "dialogue": "... [wait time=3] ... [/wait]",
-"offset": Vector2(2500, 840),
+"emotion": -1,
+"offset": Vector2(2740, 920),
 "options": {
 0: {
 "condition": {},
@@ -113,11 +124,13 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.00012, 251.00012),
+"robo_notes": "",
+"size": Vector2(300.0005, 418.99994),
 "speaker": 4
 },
 &"1_15": {
 "dialogue": "I am detecting [color=red] [shake]DECEPTION![/shake][/color] you are UNEMPLOYED!",
+"emotion": -1,
 "offset": Vector2(1440, 1260),
 "options": {
 0: {
@@ -126,11 +139,13 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(380, 340),
+"robo_notes": "",
+"size": Vector2(380.00012, 418.99976),
 "speaker": 5
 },
 &"1_16": {
 "dialogue": "You know what they say,.. [wait time=1]Assimilation makes an Ass out of imi and lation [wave] <finger guns> [/wave][/wait]",
+"emotion": -1,
 "offset": Vector2(1440, 1640),
 "options": {
 0: {
@@ -139,11 +154,13 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(400, 340),
+"robo_notes": "",
+"size": Vector2(400.00012, 418.99988),
 "speaker": 6
 },
 &"1_17": {
 "dialogue": "<sobs> ... [wait time=",
+"emotion": -1,
 "offset": Vector2(5780, 500),
 "options": {
 0: {
@@ -152,49 +169,53 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(340, 259.99997),
+"robo_notes": "",
+"size": Vector2(340, 419),
 "speaker": 0
 },
 &"1_2": {
 "dialogue": "Uh.. [wait time=0.5] Yes.. [/wait] [wait time=1] it just hit me when at my company team-building-and-assimilation event [/wait]",
+"emotion": 2,
 "offset": Vector2(960, 460),
 "options": {
 0: {
 "condition": {},
 "link": &"1_13",
-"text": "[Happy] I love assimilating!"
+"text": "[Blank] Go on.."
 },
 1: {
 "condition": {},
 "link": &"1_3",
-"text": "[Blank] Go on.."
+"text": "[Sad] Sounds stressful"
 },
 2: {
 "condition": {},
 "link": &"1_12",
-"text": "[Sad] Sounds stressful"
+"text": "[Stern] That's a lie!"
 },
 3: {
 "condition": {},
 "link": &"1_15",
-"text": "[Stern] That's a lie!"
+"text": "[Joker] <Crack a Joke>"
 },
 4: {
 "condition": {},
 "link": &"1_16",
-"text": "[Joker] <Crack a Joke>"
+"text": "[Diagnosis] You hate Humans!"
 },
 5: {
 "condition": {},
 "link": "END",
-"text": "[Diagnosis] You hate Humans!"
+"text": "[Happy] I love assimilating!"
 }
 },
-"size": Vector2(360, 680),
+"robo_notes": "When is this guy done?",
+"size": Vector2(360.00024, 680),
 "speaker": 0
 },
 &"1_3": {
 "dialogue": "Tell me more <human>, was there something at the event that was making you [rainbow]Anxious[/rainbow]?",
+"emotion": -1,
 "offset": Vector2(1420, 460),
 "options": {
 0: {
@@ -203,49 +224,53 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(320, 379.99997),
+"robo_notes": "",
+"size": Vector2(319.99988, 419),
 "speaker": 4
 },
 &"1_4": {
 "dialogue": "Uh.. [wait time=0.5] Well... [/wait] [wait time=1] Actually this was dumb. I'm fine really. I didn't need to come in today...",
+"emotion": 4,
 "offset": Vector2(1820, 460),
 "options": {
 0: {
 "condition": {},
-"link": "END",
-"text": "[Happy] Fantastic"
-},
-1: {
-"condition": {},
 "link": &"1_14",
 "text": "[Blank] <Stare Silently>"
 },
-2: {
+1: {
 "condition": {},
 "link": "END",
 "text": "[Sad] I feel dumb sometimes too"
 },
-3: {
+2: {
 "condition": {},
 "link": &"1_5",
 "text": "[Stern] <Push for Answer>"
 },
-4: {
+3: {
 "condition": {},
 "link": "END",
 "text": "[Joker] <Crack a Joke>"
 },
-5: {
+4: {
 "condition": {},
 "link": "END",
 "text": "[Diagnosis] Nothing is Wrong!"
+},
+5: {
+"condition": {},
+"link": "END",
+"text": "[Happy] Fantastic"
 }
 },
-"size": Vector2(380, 660),
+"robo_notes": "",
+"size": Vector2(379.99988, 760),
 "speaker": 0
 },
 &"1_5": {
 "dialogue": "You've booked in for the session, and we're not leaving until we get to the bottom of this.",
+"emotion": -1,
 "offset": Vector2(2300, 420),
 "options": {
 0: {
@@ -254,11 +279,13 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(359.99976, 380),
+"robo_notes": "",
+"size": Vector2(359.99963, 419.00003),
 "speaker": 5
 },
 &"1_6": {
 "dialogue": "Now think back, what was it at the event that made you anxious?",
+"emotion": -1,
 "offset": Vector2(2720, 420),
 "options": {
 0: {
@@ -267,11 +294,13 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(339.99988, 380),
+"robo_notes": "",
+"size": Vector2(339.9995, 419.00003),
 "speaker": 5
 },
 &"1_7": {
 "dialogue": "Fine, fine. It was during the presentations,.. I got up to give my Q5 report on the sale of the dystop-atron 3000...",
+"emotion": 2,
 "offset": Vector2(3180, 480),
 "options": {
 0: {
@@ -280,49 +309,53 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(420.00024, 460),
+"robo_notes": "",
+"size": Vector2(420, 460.00003),
 "speaker": 0
 },
 &"1_8": {
 "dialogue": "... and I just [shake]froze[/shake]",
+"emotion": 3,
 "offset": Vector2(3660, 480),
 "options": {
 0: {
 "condition": {},
 "link": "END",
-"text": "[Happy] I'm sure you were fine"
-},
-1: {
-"condition": {},
-"link": "END",
 "text": "[Blank] So...?"
 },
-2: {
+1: {
 "condition": {},
 "link": &"1_9",
 "text": "[Sad] Public speaking is tough"
 },
-3: {
+2: {
 "condition": {},
 "link": "END",
 "text": "[Stern] Get it together!"
 },
-4: {
+3: {
 "condition": {},
 "link": "END",
 "text": "[Joker] <Crack a Joke>"
 },
-5: {
+4: {
 "condition": {},
 "link": "END",
 "text": "[Diagnosis] 10 mg of Antifreeze!"
+},
+5: {
+"condition": {},
+"link": "END",
+"text": "[Happy] I'm sure you were fine"
 }
 },
-"size": Vector2(440.0005, 540),
+"robo_notes": "",
+"size": Vector2(440.00024, 659),
 "speaker": 0
 },
 &"1_9": {
 "dialogue": "Public speaking is tough for a lot of people. Except [wait speed=1][wave]ROBOTS[/wave][/wait]! Do you often experience [rainbow]Anxiety[/rainbow] when on stage?",
+"emotion": -1,
 "offset": Vector2(4220, 500),
 "options": {
 0: {
@@ -331,7 +364,8 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(440, 420.0001),
+"robo_notes": "",
+"size": Vector2(439.9995, 420.00012),
 "speaker": 2
 },
 &"3_1": {

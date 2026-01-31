@@ -6,12 +6,26 @@ var cur_scenario : PatientScenario
 var cur_scenario_idx : int
 var timer_callback : Callable
 
+@export var custom_effects : Array[RichTextEffect] = [
+	RichTextWait.new(),
+	RichTextGhost.new(),
+	RichTextMatrix.new()
+	]
+	
+@export var robo_notes_theme : Theme
+
 @onready var dialogue_box = $Control/DialogueBox
 @onready var patient_info = $Control/PatientInfo
 @onready var event_text = $Control/EventText
 @onready var sequence_delay_timer = $SequenceDelay ## Used for timeline sequence delays
 @onready var quit_box = $Control/QuitToMenu
 @onready var options_box_container = $Control/DialogueOptions
+@onready var robo_notes_container = $Control/ColorRect/ScrollContainer/RoboNotesContainer
+@onready var typewriter_scroll = $Control/ColorRect/ScrollContainer
+
+var robo_type_alpha = 0
+var cur_robo_notes : RichTextLabel
+var robo_type_speed = 1
 
 func _on_sequence_delay_timeout() -> void:
 	if not timer_callback.is_null():
@@ -30,6 +44,15 @@ func _ready():
 	cur_scenario_idx = 0
 	dialogue_box.set_external_options_container(options_box_container)
 	try_setup_scenario(cur_scenario_idx)
+
+func _process(delta: float) -> void:
+	if cur_robo_notes:
+		if robo_type_alpha < 1:
+			robo_type_alpha = robo_type_alpha + (robo_type_speed * delta)
+			robo_type_alpha = minf(1, robo_type_alpha)
+			cur_robo_notes.visible_ratio = robo_type_alpha
+			typewriter_scroll.scroll_vertical = 1000000000
+			## TODO: typing audio
 	
 func try_setup_scenario(index : int) -> bool:
 	if scenarios.size() > index :
@@ -80,7 +103,7 @@ func end_game():
 func _on_quit_to_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://Menu.tscn")
 
-func _on_dialogue_processed(speaker: Variant, dialogue: String, options: Array[String]) -> void:
+func _on_dialogue_processed(speaker: Variant, dialogue: String, options: Array[String], emotion : int, robo_notes_text : String) -> void:
 	var speaker_name : String
 	if speaker is Character:
 		speaker_name = speaker.name
@@ -92,3 +115,22 @@ func _on_dialogue_processed(speaker: Variant, dialogue: String, options: Array[S
 	else:
 		dialogue_box.anchor_left = 0.5
 		dialogue_box.anchor_right = 1
+
+func _on_robo_notes_start(notes: String) -> void:
+	if cur_robo_notes:
+		if robo_type_alpha < 0:
+			cur_robo_notes.visible_ratio = 1
+	var new_robo_notes = RichTextLabel.new()
+	robo_notes_container.add_child(new_robo_notes)
+	new_robo_notes.theme = robo_notes_theme
+	new_robo_notes.text = notes
+	new_robo_notes.bbcode_enabled = true
+	new_robo_notes.size_flags_horizontal = Control.SIZE_FILL
+	new_robo_notes.size_flags_vertical = Control.SIZE_SHRINK_END
+	new_robo_notes.custom_effects = custom_effects
+	new_robo_notes.visible_ratio = 0
+	new_robo_notes.fit_content = true
+	new_robo_notes.scroll_active = false
+	new_robo_notes.scroll_following = true
+	cur_robo_notes = new_robo_notes
+	robo_type_alpha = 0

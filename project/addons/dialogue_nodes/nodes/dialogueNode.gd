@@ -10,11 +10,15 @@ signal connection_shift_request(from_node : String, old_port : int, new_port : i
 @export var max_options := 6
 @export var resize_timer : Timer
 @export var custom_speaker_timer : Timer
+@export var emotion_timer : Timer
+@export var robo_notes_timer : Timer
 @export var dialogue_timer : Timer
 
 @onready var speaker = %Speaker
 @onready var custom_speaker = %CustomSpeaker
 @onready var character_toggle = %CharacterToggle
+@onready var emotion = %Emotion
+@onready var robo_notes = %RoboNotes
 @onready var dialogue = %Dialogue
 @onready var dialogue_panel = %DialoguePanel
 @onready var dialogue_expanded = %DialogueExpanded
@@ -23,6 +27,8 @@ var undo_redo : EditorUndoRedoManager
 var last_size := size
 var last_custom_speaker := ''
 var cur_speaker := -1
+var cur_emotion := -1
+var last_robo_notes := ''
 var last_dialogue := ''
 var OptionScene := preload("res://addons/dialogue_nodes/nodes/DialogueNodeOption.tscn")
 var options : Array = []
@@ -56,6 +62,9 @@ func _to_dict(graph : GraphEdit):
 	
 	dict['dialogue'] = dialogue.text
 	dict['size'] = size
+	
+	dict['emotion'] = cur_emotion
+	dict['robo_notes'] = robo_notes.text
 	
 	# get options connected to other nodes
 	var options_dict := {}
@@ -148,6 +157,10 @@ func toggle_speaker_input(use_speaker_list : bool):
 	custom_speaker.visible = not use_speaker_list
 	speaker.visible = use_speaker_list
 
+func set_robo_notes_text(new_text : String):
+	if robo_notes.text != new_text:
+		robo_notes.text = new_text
+	last_robo_notes = robo_notes.text
 
 func set_dialogue_text(new_text : String):
 	if dialogue.text != new_text:
@@ -194,11 +207,13 @@ func remove_option(option : BoxContainer):
 
 func update_slots():
 	if options.size() == 1:
-		set_slot(options[0].get_index(), false, 0, base_color, true, 0, base_color)
+		var option_index = options[0].get_index()
+		set_slot(option_index, false, 0, base_color, true, 0, base_color)
 		return
 	
 	for option in options:
 		var enabled : bool = option.text != ''
+		var option_index = option.get_index()
 		set_slot(option.get_index(), false, 0, base_color, enabled, 0, base_color)
 
 
@@ -275,6 +290,31 @@ func _on_speaker_toggled(toggled_on : bool):
 	undo_redo.add_undo_method(character_toggle, 'set_pressed_no_signal', not toggled_on)
 	undo_redo.commit_action()
 
+func _on_emotion_selected(idx: int) -> void:
+	if not undo_redo: return
+	
+	undo_redo.create_action('Set emotion')
+	undo_redo.add_do_property(self, 'cur_emotion', idx)
+	undo_redo.add_do_method(emotion, 'select', idx)
+	undo_redo.add_do_method(self, '_on_modified')
+	undo_redo.add_undo_method(self, '_on_modified')
+	undo_redo.add_undo_property(self, 'cur_emotion', cur_emotion)
+	undo_redo.add_undo_method(emotion, 'select', cur_emotion)
+	undo_redo.commit_action()
+
+func _on_robo_notes_text_changed() -> void:
+	robo_notes_timer.stop()
+	robo_notes_timer.start()
+	
+func _on_robo_notes_timer_timeout() -> void:
+	if not undo_redo: return
+	
+	undo_redo.create_action('Set robo notes text')
+	undo_redo.add_do_method(self, 'set_robo_notes_text', robo_notes.text)
+	undo_redo.add_do_method(self, '_on_modified')
+	undo_redo.add_undo_method(self, '_on_modified')
+	undo_redo.add_undo_method(self, 'set_robo_notes_text', last_robo_notes)
+	undo_redo.commit_action()
 
 func _on_dialogue_text_changed():
 	dialogue_timer.stop()

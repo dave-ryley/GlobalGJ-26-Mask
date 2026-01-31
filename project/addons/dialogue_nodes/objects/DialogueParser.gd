@@ -10,7 +10,7 @@ signal dialogue_started(id : String)
 ## Triggered when a single dialogue block has been processed.
 ## Passes [param speaker] which can be a [String] or a [param Character] resource, a [param dialogue] containing the text to be displayed
 ## and an [param options] list containing the texts for each option.
-signal dialogue_processed(speaker : Variant, dialogue : String, options : Array[String])
+signal dialogue_processed(speaker : Variant, dialogue : String, options : Array[String], emotion : int, robo_notes : String)
 ## Triggered when an option is selected
 signal option_selected(idx : int)
 ## Triggered when a SignalNode is encountered while processing the dialogue.
@@ -21,6 +21,8 @@ signal dialogue_signal(value : String)
 signal variable_changed(variable_name : String, value)
 ## Triggered when a dialogue tree has ended processing and reached the end of the dialogue.
 signal dialogue_ended
+## Triggered when robo notes have started
+signal robo_notes_processed(notes : String)
 
 ## Contains the [param DialogueData] resource created using the Dialogue Nodes editor. Use [method load_data] to set its value.
 @export var data : DialogueData :
@@ -131,6 +133,7 @@ func _process_dialogue(dict : Dictionary):
 		speaker = characters[dict.speaker]
 	
 	var dialogue_text = _parse_variables(dict.dialogue)
+	var robo_notes_text = _parse_variables(dict.robo_notes)
 	
 	var option_texts : Array[String] = []
 	_option_links.clear()
@@ -139,7 +142,7 @@ func _process_dialogue(dict : Dictionary):
 			option_texts.append(_parse_variables(option.text))
 			_option_links.append(option.link)
 	
-	dialogue_processed.emit(speaker, dialogue_text, option_texts)
+	dialogue_processed.emit(speaker, dialogue_text, option_texts, dict.emotion, robo_notes_text)
 
 
 # Processes the signal node data (dict).

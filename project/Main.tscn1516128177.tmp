@@ -8,20 +8,7 @@
 [ext_resource type="Resource" uid="uid://tyx8eveq2cwe" path="res://patient-scenarios/patient-02.tres" id="4_03owx"]
 [ext_resource type="Script" uid="uid://dskldyr11gvwp" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="4_trn2v"]
 [ext_resource type="Script" uid="uid://bqi8tba3wtry0" path="res://addons/dialogue_nodes/objects/bbcodeMatrix.gd" id="5_03owx"]
-[ext_resource type="Theme" uid="uid://dc6c1peo4pfyr" path="res://addons/dialogue_nodes/themes/bubbly.theme" id="5_wkp8b"]
 [ext_resource type="Script" uid="uid://brijfq1ktlcfp" path="res://code/dialogue_selection.gd" id="9_03owx"]
-
-[sub_resource type="RichTextEffect" id="RichTextEffect_j4qnp"]
-script = ExtResource("4_trn2v")
-metadata/_custom_type_script = "uid://dskldyr11gvwp"
-
-[sub_resource type="RichTextEffect" id="RichTextEffect_fpfj3"]
-script = ExtResource("5_03owx")
-metadata/_custom_type_script = "uid://bqi8tba3wtry0"
-
-[sub_resource type="RichTextEffect" id="RichTextEffect_sc1dx"]
-script = ExtResource("3_lgr22")
-metadata/_custom_type_script = "uid://q0mpty8au6eu"
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_wkp8b"]
 script = ExtResource("3_lgr22")
@@ -35,8 +22,6 @@ script = ExtResource("5_03owx")
 [node name="Node2D" type="Node2D" unique_id=604476953]
 script = ExtResource("1_fos0i")
 scenarios = Array[ExtResource("2_lgr22")]([ExtResource("3_trn2v"), ExtResource("4_03owx")])
-custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_j4qnp"), SubResource("RichTextEffect_fpfj3"), SubResource("RichTextEffect_sc1dx")])
-robo_notes_theme = ExtResource("5_wkp8b")
 
 [node name="Control" type="Control" parent="." unique_id=90789762]
 layout_mode = 3
@@ -113,35 +98,12 @@ offset_bottom = 257.28
 theme_override_font_sizes/font_size = 63
 text = "1"
 
-[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1459194047]
+[node name="RoboNotes" type="RichTextLabel" parent="Control" unique_id=1492953644]
 layout_mode = 0
-offset_left = 687.0
-offset_top = 453.0
-offset_right = 1222.0
-offset_bottom = 718.0
-color = Color(0.79923, 0.8000572, 0.6193323, 1)
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/ColorRect" unique_id=1390572044]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 19.0
-offset_right = -22.0
-offset_bottom = -29.0
-grow_horizontal = 2
-grow_vertical = 2
-horizontal_scroll_mode = 3
-vertical_scroll_mode = 3
-
-[node name="RoboNotesContainer" type="VBoxContainer" parent="Control/ColorRect/ScrollContainer" unique_id=57115671]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Control" type="Control" parent="Control/ColorRect/ScrollContainer/RoboNotesContainer" unique_id=527958738]
-custom_minimum_size = Vector2(0, 233.655)
-layout_mode = 2
+offset_left = 851.0
+offset_top = 581.0
+offset_right = 1219.0
+offset_bottom = 666.0
 
 [node name="SequenceDelay" type="Timer" parent="." unique_id=727727574]
 one_shot = true
@@ -150,6 +112,5 @@ one_shot = true
 
 [connection signal="dialogue_processed" from="Control/DialogueBox" to="." method="_on_dialogue_processed"]
 [connection signal="dialogue_signal" from="Control/DialogueBox" to="." method="_on_dialogue_signal"]
-[connection signal="robo_notes_start" from="Control/DialogueBox" to="." method="_on_robo_notes_start"]
 [connection signal="pressed" from="Control/QuitToMenu" to="." method="_on_quit_to_menu_pressed"]
 [connection signal="timeout" from="SequenceDelay" to="." method="_on_sequence_delay_timeout"]
