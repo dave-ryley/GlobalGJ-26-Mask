@@ -1,0 +1,354 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://dwkcrlvdlls8d"]
+
+[ext_resource type="Script" uid="uid://nirrpg4jiyww" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_klsba"]
+
+[resource]
+script = ExtResource("1_klsba")
+starts = {
+"START": &"0_1"
+}
+nodes = {
+&"0_1": {
+"link": &"1_1",
+"offset": Vector2(324, 473),
+"start_id": "START"
+},
+&"1_1": {
+"dialogue": "So <human patient>.. you've come in with [rainbow] Anxiety [/rainbow] issues I see, want to tell me more about that?",
+"offset": Vector2(600, 460),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 359.99973),
+"speaker": 4
+},
+&"1_10": {
+"dialogue": "For years,.. stages, stage lights, crowds... as far back as I can remember. Oh god... the lights,... they're back... aaa.. I can't do this!",
+"offset": Vector2(4720, 500),
+"options": {
+0: {
+"condition": {},
+"link": &"1_11",
+"text": "[Happy] <Calm him down>"
+},
+1: {
+"condition": {},
+"link": "END",
+"text": "[Blank] <Silently let him spiral>"
+},
+2: {
+"condition": {},
+"link": "END",
+"text": "[Sad] Oh no!"
+},
+3: {
+"condition": {},
+"link": "END",
+"text": "[Stern] Get it together!"
+},
+4: {
+"condition": {},
+"link": "END",
+"text": "[Joker] <Crack a Joke>"
+},
+5: {
+"condition": {},
+"link": "END",
+"text": "[Diagnosis] 5 weeks away from lights!"
+}
+},
+"size": Vector2(479.99976, 600),
+"speaker": 0
+},
+&"1_11": {
+"dialogue": "Hey, hey.. its ok. [wave]Deep human breaths[/wave] now. Think back, what was a good childhood memory?",
+"offset": Vector2(5300, 500),
+"options": {
+0: {
+"condition": {},
+"link": &"1_17",
+"text": ""
+}
+},
+"size": Vector2(380, 379.99997),
+"speaker": 3
+},
+&"1_12": {
+"dialogue": "Big company events can be stresful. Was there something at the event that was making you [rainbow]Anxious[/rainbow]?",
+"offset": Vector2(1440, 880),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": ""
+}
+},
+"size": Vector2(300, 340),
+"speaker": 2
+},
+&"1_13": {
+"dialogue": "Assimilation events are the best! It couldn't have possibly been anything to do with that...",
+"offset": Vector2(1420, 40),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": ""
+}
+},
+"size": Vector2(300, 380),
+"speaker": 3
+},
+&"1_14": {
+"dialogue": "... [wait time=3] ... [/wait]",
+"offset": Vector2(2500, 840),
+"options": {
+0: {
+"condition": {},
+"link": &"1_7",
+"text": ""
+}
+},
+"size": Vector2(300.00012, 251.00012),
+"speaker": 4
+},
+&"1_15": {
+"dialogue": "I am detecting [color=red] [shake]DECEPTION![/shake][/color] you are UNEMPLOYED!",
+"offset": Vector2(1440, 1260),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(380, 340),
+"speaker": 5
+},
+&"1_16": {
+"dialogue": "You know what they say,.. [wait time=1]Assimilation makes an Ass out of imi and lation [wave] <finger guns> [/wave][/wait]",
+"offset": Vector2(1440, 1640),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(400, 340),
+"speaker": 6
+},
+&"1_17": {
+"dialogue": "<sobs> ... [wait time=",
+"offset": Vector2(5780, 500),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(340, 259.99997),
+"speaker": 0
+},
+&"1_2": {
+"dialogue": "Uh.. [wait time=0.5] Yes.. [/wait] [wait time=1] it just hit me when at my company team-building-and-assimilation event [/wait]",
+"offset": Vector2(960, 460),
+"options": {
+0: {
+"condition": {},
+"link": &"1_13",
+"text": "[Happy] I love assimilating!"
+},
+1: {
+"condition": {},
+"link": &"1_3",
+"text": "[Blank] Go on.."
+},
+2: {
+"condition": {},
+"link": &"1_12",
+"text": "[Sad] Sounds stressful"
+},
+3: {
+"condition": {},
+"link": &"1_15",
+"text": "[Stern] That's a lie!"
+},
+4: {
+"condition": {},
+"link": &"1_16",
+"text": "[Joker] <Crack a Joke>"
+},
+5: {
+"condition": {},
+"link": "END",
+"text": "[Diagnosis] You hate Humans!"
+}
+},
+"size": Vector2(360, 680),
+"speaker": 0
+},
+&"1_3": {
+"dialogue": "Tell me more <human>, was there something at the event that was making you [rainbow]Anxious[/rainbow]?",
+"offset": Vector2(1420, 460),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": ""
+}
+},
+"size": Vector2(320, 379.99997),
+"speaker": 4
+},
+&"1_4": {
+"dialogue": "Uh.. [wait time=0.5] Well... [/wait] [wait time=1] Actually this was dumb. I'm fine really. I didn't need to come in today...",
+"offset": Vector2(1820, 460),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": "[Happy] Fantastic"
+},
+1: {
+"condition": {},
+"link": &"1_14",
+"text": "[Blank] <Stare Silently>"
+},
+2: {
+"condition": {},
+"link": "END",
+"text": "[Sad] I feel dumb sometimes too"
+},
+3: {
+"condition": {},
+"link": &"1_5",
+"text": "[Stern] <Push for Answer>"
+},
+4: {
+"condition": {},
+"link": "END",
+"text": "[Joker] <Crack a Joke>"
+},
+5: {
+"condition": {},
+"link": "END",
+"text": "[Diagnosis] Nothing is Wrong!"
+}
+},
+"size": Vector2(380, 660),
+"speaker": 0
+},
+&"1_5": {
+"dialogue": "You've booked in for the session, and we're not leaving until we get to the bottom of this.",
+"offset": Vector2(2300, 420),
+"options": {
+0: {
+"condition": {},
+"link": &"1_6",
+"text": ""
+}
+},
+"size": Vector2(359.99976, 380),
+"speaker": 5
+},
+&"1_6": {
+"dialogue": "Now think back, what was it at the event that made you anxious?",
+"offset": Vector2(2720, 420),
+"options": {
+0: {
+"condition": {},
+"link": &"1_7",
+"text": ""
+}
+},
+"size": Vector2(339.99988, 380),
+"speaker": 5
+},
+&"1_7": {
+"dialogue": "Fine, fine. It was during the presentations,.. I got up to give my Q5 report on the sale of the dystop-atron 3000...",
+"offset": Vector2(3180, 480),
+"options": {
+0: {
+"condition": {},
+"link": &"1_8",
+"text": ""
+}
+},
+"size": Vector2(420.00024, 460),
+"speaker": 0
+},
+&"1_8": {
+"dialogue": "... and I just [shake]froze[/shake]",
+"offset": Vector2(3660, 480),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": "[Happy] I'm sure you were fine"
+},
+1: {
+"condition": {},
+"link": "END",
+"text": "[Blank] So...?"
+},
+2: {
+"condition": {},
+"link": &"1_9",
+"text": "[Sad] Public speaking is tough"
+},
+3: {
+"condition": {},
+"link": "END",
+"text": "[Stern] Get it together!"
+},
+4: {
+"condition": {},
+"link": "END",
+"text": "[Joker] <Crack a Joke>"
+},
+5: {
+"condition": {},
+"link": "END",
+"text": "[Diagnosis] 10 mg of Antifreeze!"
+}
+},
+"size": Vector2(440.0005, 540),
+"speaker": 0
+},
+&"1_9": {
+"dialogue": "Public speaking is tough for a lot of people. Except [wait speed=1][wave]ROBOTS[/wave][/wait]! Do you often experience [rainbow]Anxiety[/rainbow] when on stage?",
+"offset": Vector2(4220, 500),
+"options": {
+0: {
+"condition": {},
+"link": &"1_10",
+"text": ""
+}
+},
+"size": Vector2(440, 420.0001),
+"speaker": 2
+},
+&"3_1": {
+"link": "END",
+"offset": Vector2(4940, 280),
+"signalValue": "root_cause"
+},
+&"3_2": {
+"link": "END",
+"offset": Vector2(4920, -40),
+"signalValue": "resolution_good"
+},
+&"3_3": {
+"link": "END",
+"offset": Vector2(4940, 80),
+"signalValue": "resolution_bad"
+}
+}
+strays = Array[String](["3_1", "3_3", "3_2"])
+characters = "res://patient-scenarios/GameCharacters.tres"
