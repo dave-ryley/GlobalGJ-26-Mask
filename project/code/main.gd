@@ -11,6 +11,7 @@ var timer_callback : Callable
 @onready var event_text = $Control/EventText
 @onready var sequence_delay_timer = $SequenceDelay ## Used for timeline sequence delays
 @onready var quit_box = $Control/QuitToMenu
+@onready var options_box_container = $Control/DialogueOptions
 
 func _on_sequence_delay_timeout() -> void:
 	if not timer_callback.is_null():
@@ -27,6 +28,7 @@ func _ready():
 	quit_box.hide()
 	event_text.hide()
 	cur_scenario_idx = 0
+	dialogue_box.set_external_options_container(options_box_container)
 	try_setup_scenario(cur_scenario_idx)
 	
 func try_setup_scenario(index : int) -> bool:
@@ -77,7 +79,6 @@ func end_game():
 
 func _on_quit_to_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://Menu.tscn")
-
 
 func _on_dialogue_processed(speaker: Variant, dialogue: String, options: Array[String]) -> void:
 	var speaker_name : String

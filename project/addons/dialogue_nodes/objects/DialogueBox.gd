@@ -142,6 +142,8 @@ var speaker_label : Label
 var dialogue_label : RichTextLabel
 ## Contains all the option buttons. The currently displayed options are visible while the rest are hidden. This value is automatically set while running a dialogue tree.
 var options_container : BoxContainer
+## Indication that the option buttons are external
+var options_are_external : bool
 
 # [param DialogueParser] used for parsing the dialogue [member data].
 # NOTE: Using [param DialogueParser] as a child instead of extending from it, because [DialogueBox] needs to extend from [Panel].
@@ -257,6 +259,25 @@ func stop():
 	if not _dialogue_parser: return
 	_dialogue_parser.stop()
 
+func set_external_options_container(external_container : BoxContainer):
+	if options_container:
+		options_container.get_parent().remove_child(options_container)
+		options_container.queue_free()
+	options_container = external_container
+	if options_container:
+		# clear all options
+		for option in options_container.get_children():
+			options_container.remove_child(option)
+			option.queue_free()
+
+		for idx in range(max_options_count):
+			var button = Button.new()
+			options_container.add_child(button)
+			button.text = 'Option '+str(idx+1)
+			button.pressed.connect(select_option.bind(idx))
+	var options_container_selection : DialogueSelection = options_container
+	if options_container_selection:
+		options_container_selection.assign_selection_listeners()
 
 ## Continues processing the dialogue tree from the node connected to the option at [param idx].
 func select_option(idx : int):

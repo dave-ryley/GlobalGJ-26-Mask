@@ -15,7 +15,7 @@ nodes = {
 },
 &"1_1": {
 "dialogue": "Let's see if this works!",
-"offset": Vector2(600, 460),
+"offset": Vector2(600, 480),
 "options": {
 0: {
 "condition": {},
@@ -33,7 +33,7 @@ nodes = {
 "text": "Test Option 3"
 }
 },
-"size": Vector2(300, 411),
+"size": Vector2(300, 420),
 "speaker": 2
 },
 &"1_2": {
@@ -46,7 +46,7 @@ nodes = {
 "text": "Discover Root Cause"
 }
 },
-"size": Vector2(300, 331.00003),
+"size": Vector2(300, 331),
 "speaker": 1
 },
 &"1_3": {
@@ -59,7 +59,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 291.00018),
+"size": Vector2(300, 291.00024),
 "speaker": 1
 },
 &"1_4": {
@@ -72,7 +72,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 290.99988),
+"size": Vector2(300, 291),
 "speaker": 1
 },
 &"1_5": {
@@ -91,7 +91,7 @@ nodes = {
 "text": "Trigger Bad Resolution"
 }
 },
-"size": Vector2(340, 371.00003),
+"size": Vector2(340, 371),
 "speaker": 7
 },
 &"3_1": {

@@ -20,20 +20,20 @@ nodes = {
 0: {
 "condition": {},
 "link": &"1_2",
-"text": "Test Option 1"
+"text": "[Happy] Cheer up"
 },
 1: {
 "condition": {},
 "link": &"1_3",
-"text": "Test Option 2"
+"text": "[Sad] Empathise"
 },
 2: {
 "condition": {},
-"link": &"1_4",
-"text": "Test Option 3"
+"link": "END",
+"text": "[Blank] Go on..."
 }
 },
-"size": Vector2(300, 371),
+"size": Vector2(300, 500),
 "speaker": 3
 },
 &"1_2": {
@@ -56,15 +56,30 @@ nodes = {
 0: {
 "condition": {},
 "link": "END",
-"text": ""
+"text": "[Blank] Go on..."
+},
+1: {
+"condition": {},
+"link": "END",
+"text": "[Blank] Go on..."
+},
+2: {
+"condition": {},
+"link": "END",
+"text": "[Blank] Go on..."
+},
+3: {
+"condition": {},
+"link": "END",
+"text": "[Blank] Go on..."
 }
 },
-"size": Vector2(300, 251),
+"size": Vector2(300, 371),
 "speaker": 0
 },
 &"1_4": {
 "dialogue": "You did test option 3",
-"offset": Vector2(1060, 1100),
+"offset": Vector2(1060, 1220),
 "options": {
 0: {
 "condition": {},
@@ -110,4 +125,5 @@ nodes = {
 "signalValue": "resolution_bad"
 }
 }
+strays = Array[String](["1_4"])
 characters = "res://patient-scenarios/GameCharacters.tres"

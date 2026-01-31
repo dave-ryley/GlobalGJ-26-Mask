@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://tyx8eveq2cwe" path="res://patient-scenarios/patient-02.tres" id="4_03owx"]
 [ext_resource type="Script" uid="uid://dskldyr11gvwp" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="4_trn2v"]
 [ext_resource type="Script" uid="uid://bqi8tba3wtry0" path="res://addons/dialogue_nodes/objects/bbcodeMatrix.gd" id="5_03owx"]
+[ext_resource type="Script" uid="uid://brijfq1ktlcfp" path="res://code/dialogue_selection.gd" id="9_03owx"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_wkp8b"]
 script = ExtResource("3_lgr22")
@@ -39,7 +40,9 @@ offset_bottom = 200.0
 grow_horizontal = 2
 script = ExtResource("2_3dxm6")
 start_id = "Start"
+hide_portrait = true
 custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_wkp8b"), SubResource("RichTextEffect_20pc6"), SubResource("RichTextEffect_5vvyt")])
+max_options_count = 6
 metadata/_custom_type_script = "uid://b8s5lbiu5jkp6"
 
 [node name="QuitToMenu" type="Button" parent="Control" unique_id=1547027457]
@@ -74,8 +77,30 @@ theme_override_font_sizes/font_size = 30
 text = "Announcement Text Here"
 horizontal_alignment = 1
 
+[node name="DialogueOptions" type="VBoxContainer" parent="Control" unique_id=1858139214]
+layout_mode = 0
+offset_left = 383.0
+offset_top = 223.0
+offset_right = 593.0
+offset_bottom = 334.0
+script = ExtResource("9_03owx")
+
+[node name="Label" type="Label" parent="Control" unique_id=161094805]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.041
+anchor_bottom = 0.076000005
+offset_left = 122.0
+offset_top = 225.0
+offset_right = 152.51999
+offset_bottom = 257.28
+theme_override_font_sizes/font_size = 63
+text = "1"
+
 [node name="SequenceDelay" type="Timer" parent="." unique_id=727727574]
 one_shot = true
+
+[node name="Mask" type="Sprite2D" parent="." unique_id=803445410]
 
 [connection signal="dialogue_processed" from="Control/DialogueBox" to="." method="_on_dialogue_processed"]
 [connection signal="dialogue_signal" from="Control/DialogueBox" to="." method="_on_dialogue_signal"]
