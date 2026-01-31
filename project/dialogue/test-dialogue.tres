@@ -1,0 +1,78 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://dwkcrlvdlls8d"]
+
+[ext_resource type="Script" uid="uid://nirrpg4jiyww" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_klsba"]
+
+[resource]
+script = ExtResource("1_klsba")
+starts = {
+"START": &"0_1"
+}
+nodes = {
+&"0_1": {
+"link": &"1_1",
+"offset": Vector2(324, 473),
+"start_id": "START"
+},
+&"1_1": {
+"dialogue": "Let's see if this works!",
+"offset": Vector2(600, 460),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": "Test Option 1"
+},
+1: {
+"condition": {},
+"link": &"1_3",
+"text": "Test Option 2"
+},
+2: {
+"condition": {},
+"link": &"1_4",
+"text": "Test Option 3"
+}
+},
+"size": Vector2(300, 366),
+"speaker": "Speaker 01"
+},
+&"1_2": {
+"dialogue": "You did test option 1",
+"offset": Vector2(1047, 467),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 246),
+"speaker": "Speaker 01"
+},
+&"1_3": {
+"dialogue": "You did test option 2",
+"offset": Vector2(1060, 780),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 246),
+"speaker": "Speaker 01"
+},
+&"1_4": {
+"dialogue": "You did test option 3",
+"offset": Vector2(1060, 1100),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 246),
+"speaker": "Speaker 01"
+}
+}
