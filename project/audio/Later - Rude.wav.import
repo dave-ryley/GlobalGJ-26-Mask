@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dcd5aotr0a4mu"
+path="res://.godot/imported/Later - Rude.wav-60e2a777faac04b2d250d38fe13243f7.sample"
+
+[deps]
+
+source_file="res://audio/Later - Rude.wav"
+dest_files=["res://.godot/imported/Later - Rude.wav-60e2a777faac04b2d250d38fe13243f7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -24,7 +24,7 @@ nodes = {
 "text": ""
 }
 },
-"robo_notes": "Ugh, I'm so bored...",
+"robo_notes": "Ugh, I'm bored",
 "size": Vector2(320, 620),
 "speaker": 4
 },
@@ -80,7 +80,7 @@ nodes = {
 }
 },
 "robo_notes": "",
-"size": Vector2(380, 419),
+"size": Vector2(380, 418.99997),
 "speaker": 3
 },
 &"1_12": {
@@ -95,7 +95,7 @@ nodes = {
 }
 },
 "robo_notes": "",
-"size": Vector2(300.00012, 419.00006),
+"size": Vector2(300, 419),
 "speaker": 2
 },
 &"1_13": {
@@ -125,7 +125,7 @@ nodes = {
 }
 },
 "robo_notes": "",
-"size": Vector2(300.0005, 418.99994),
+"size": Vector2(300.0006, 419),
 "speaker": 4
 },
 &"1_15": {
@@ -140,7 +140,7 @@ nodes = {
 }
 },
 "robo_notes": "",
-"size": Vector2(380.00012, 418.99976),
+"size": Vector2(380, 419),
 "speaker": 5
 },
 &"1_16": {
@@ -155,7 +155,7 @@ nodes = {
 }
 },
 "robo_notes": "",
-"size": Vector2(400.00012, 418.99988),
+"size": Vector2(400, 419),
 "speaker": 6
 },
 &"1_17": {
@@ -170,46 +170,46 @@ nodes = {
 }
 },
 "robo_notes": "",
-"size": Vector2(340, 419),
+"size": Vector2(340, 418.99997),
 "speaker": 0
 },
 &"1_2": {
 "dialogue": "Uh.. [wait time=0.5] Yes.. [/wait] [wait time=1] it just hit me when at my company team-building-and-assimilation event [/wait]",
-"emotion": 2,
+"emotion": 0,
 "offset": Vector2(960, 460),
 "options": {
 0: {
 "condition": {},
 "link": &"1_13",
-"text": "[Blank] Go on.."
+"text": "[Happy] I love assimilating!"
 },
 1: {
 "condition": {},
 "link": &"1_3",
-"text": "[Sad] Sounds stressful"
+"text": "[Blank] Go on.."
 },
 2: {
 "condition": {},
 "link": &"1_12",
-"text": "[Stern] That's a lie!"
+"text": "[Sad] Sounds stressful"
 },
 3: {
 "condition": {},
 "link": &"1_15",
-"text": "[Joker] <Crack a Joke>"
+"text": "[Stern] That's a lie!"
 },
 4: {
 "condition": {},
 "link": &"1_16",
-"text": "[Diagnosis] You hate Humans!"
+"text": "[Joker] <Crack a Joke>"
 },
 5: {
 "condition": {},
 "link": "END",
-"text": "[Happy] I love assimilating!"
+"text": "[Diagnosis] You hate Humans!"
 }
 },
-"robo_notes": "When is this guy done?",
+"robo_notes": "",
 "size": Vector2(360.00024, 680),
 "speaker": 0
 },
@@ -225,12 +225,12 @@ nodes = {
 }
 },
 "robo_notes": "",
-"size": Vector2(319.99988, 419),
+"size": Vector2(320, 419),
 "speaker": 4
 },
 &"1_4": {
 "dialogue": "Uh.. [wait time=0.5] Well... [/wait] [wait time=1] Actually this was dumb. I'm fine really. I didn't need to come in today...",
-"emotion": 4,
+"emotion": 1,
 "offset": Vector2(1820, 460),
 "options": {
 0: {
@@ -265,7 +265,7 @@ nodes = {
 }
 },
 "robo_notes": "",
-"size": Vector2(379.99988, 760),
+"size": Vector2(380, 760),
 "speaker": 0
 },
 &"1_5": {
@@ -280,7 +280,7 @@ nodes = {
 }
 },
 "robo_notes": "",
-"size": Vector2(359.99963, 419.00003),
+"size": Vector2(359.99976, 419),
 "speaker": 5
 },
 &"1_6": {
@@ -295,7 +295,7 @@ nodes = {
 }
 },
 "robo_notes": "",
-"size": Vector2(339.9995, 419.00003),
+"size": Vector2(339.99963, 419),
 "speaker": 5
 },
 &"1_7": {
@@ -310,12 +310,12 @@ nodes = {
 }
 },
 "robo_notes": "",
-"size": Vector2(420, 460.00003),
+"size": Vector2(419.99988, 460.00003),
 "speaker": 0
 },
 &"1_8": {
 "dialogue": "... and I just [shake]froze[/shake]",
-"emotion": 3,
+"emotion": -1,
 "offset": Vector2(3660, 480),
 "options": {
 0: {
@@ -350,7 +350,7 @@ nodes = {
 }
 },
 "robo_notes": "",
-"size": Vector2(440.00024, 659),
+"size": Vector2(440, 659),
 "speaker": 0
 },
 &"1_9": {
@@ -365,7 +365,7 @@ nodes = {
 }
 },
 "robo_notes": "",
-"size": Vector2(439.9995, 420.00012),
+"size": Vector2(439.9995, 420.0001),
 "speaker": 2
 },
 &"3_1": {

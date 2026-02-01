@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://cvske00hiquxk"]
 
 [ext_resource type="Script" uid="uid://dntr3nxfo6ltp" path="res://code/menu.gd" id="1_uubjt"]
+[ext_resource type="AudioStream" uid="uid://bmdjq0w14jtgd" path="res://music/Unplugged Vol4 Wonder Waltz Cut 30.wav" id="2_5yleq"]
+[ext_resource type="AudioStream" uid="uid://dqc1r6yoki0hl" path="res://audio/Clicks C 003.wav" id="3_ylpcl"]
+[ext_resource type="Script" uid="uid://dhb87b6hd8i8a" path="res://button_click.gd" id="4_cx167"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lthh4"]
 font_size = 43
@@ -16,26 +19,49 @@ offset_bottom = 720.0
 
 [node name="Title" type="Label" parent="Control" unique_id=1507239124]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 14
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 283.0
-offset_top = 316.0
-offset_right = -232.0
-offset_bottom = -345.0
+anchor_bottom = 0.5
+offset_top = -53.0
+offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(0.5, 0.5)
-text = "Robo-Therapist Unmasks your Issues"
+text = "Robo-Therapy: Now with 4D Emotion!"
 label_settings = SubResource("LabelSettings_lthh4")
 horizontal_alignment = 1
 
 [node name="StartGame" type="Button" parent="Control" unique_id=1320656275]
 layout_mode = 0
-offset_left = 565.0
-offset_top = 415.0
-offset_right = 736.0
-offset_bottom = 465.0
+offset_left = 551.0
+offset_top = 435.0
+offset_right = 722.0
+offset_bottom = 485.0
 text = "Start New Game"
 
+[node name="Credits" type="Label" parent="Control" unique_id=167949664]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 262.0
+offset_bottom = 321.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 20
+text = "Code by Dave Ryley - Art by Tommy Castles"
+horizontal_alignment = 1
+
+[node name="Soundtrack" type="AudioStreamPlayer2D" parent="." unique_id=696924153]
+stream = ExtResource("2_5yleq")
+autoplay = true
+
+[node name="ButtonClick" type="AudioStreamPlayer2D" parent="." unique_id=791709629]
+stream = ExtResource("3_ylpcl")
+script = ExtResource("4_cx167")
+
 [connection signal="pressed" from="Control/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="Control/StartGame" to="ButtonClick" method="_on_button_click"]

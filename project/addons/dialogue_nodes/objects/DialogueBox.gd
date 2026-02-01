@@ -285,6 +285,9 @@ func set_external_options_container(external_container : BoxContainer):
 func select_option(idx : int):
 	if not _dialogue_parser: return
 	_dialogue_parser.select_option(idx)
+	var dialogue_selection : DialogueSelection = options_container
+	if dialogue_selection:
+		dialogue_selection.on_click_option(idx)
 
 
 ## Returns [code]true[/code] if the [DialogueBox] is processing a dialogue tree.

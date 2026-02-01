@@ -14,14 +14,18 @@ var timer_callback : Callable
 	
 @export var robo_notes_theme : Theme
 
+@export var client_audio : Array[AudioStream]
+
 @onready var dialogue_box = $Control/DialogueBox
 @onready var patient_info = $Control/PatientInfo
 @onready var event_text = $Control/EventText
 @onready var sequence_delay_timer = $SequenceDelay ## Used for timeline sequence delays
 @onready var quit_box = $Control/QuitToMenu
-@onready var options_box_container = $Control/DialogueOptions
+@onready var options_box_container : DialogueSelection = $Control/DialogueOptions
 @onready var robo_notes_container = $Control/ColorRect/ScrollContainer/RoboNotesContainer
 @onready var typewriter_scroll = $Control/ColorRect/ScrollContainer
+@onready var typewriter_audio = $TypewriterAudio
+@onready var character_audio = $CharacterAudio
 
 var robo_type_alpha = 0
 var cur_robo_notes : RichTextLabel
@@ -52,7 +56,8 @@ func _process(delta: float) -> void:
 			robo_type_alpha = minf(1, robo_type_alpha)
 			cur_robo_notes.visible_ratio = robo_type_alpha
 			typewriter_scroll.scroll_vertical = 1000000000
-			## TODO: typing audio
+			if robo_type_alpha >= 1:
+				typewriter_audio.stop()
 	
 func try_setup_scenario(index : int) -> bool:
 	if scenarios.size() > index :
@@ -112,14 +117,19 @@ func _on_dialogue_processed(speaker: Variant, dialogue: String, options: Array[S
 	if speaker_name.contains("["): ## Indication of robo-advisor
 		dialogue_box.anchor_left = 0
 		dialogue_box.anchor_right = 0.5
+		options_box_container.play_robo_audio(speaker_name)
 	else:
 		dialogue_box.anchor_left = 0.5
 		dialogue_box.anchor_right = 1
+		play_client_audio(emotion)
 
 func _on_robo_notes_start(notes: String) -> void:
 	if cur_robo_notes:
 		if robo_type_alpha < 0:
 			cur_robo_notes.visible_ratio = 1
+			
+	typewriter_audio.stop()
+	typewriter_audio.play(0)
 	var new_robo_notes = RichTextLabel.new()
 	robo_notes_container.add_child(new_robo_notes)
 	new_robo_notes.theme = robo_notes_theme
@@ -134,3 +144,9 @@ func _on_robo_notes_start(notes: String) -> void:
 	new_robo_notes.scroll_following = true
 	cur_robo_notes = new_robo_notes
 	robo_type_alpha = 0
+	
+func play_client_audio(emotion : int):
+	character_audio.stop()
+	if emotion >= 0 and client_audio.size() > emotion:
+		character_audio.stream = client_audio.get(emotion)
+		character_audio.play(0)
