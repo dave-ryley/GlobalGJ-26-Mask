@@ -24,48 +24,48 @@ nodes = {
 "text": ""
 }
 },
-"robo_notes": "Ugh, I'm bored",
-"size": Vector2(320, 620),
+"robo_notes": "Yay, my first patient!",
+"size": Vector2(320, 619.99963),
 "speaker": 4
 },
 &"1_10": {
 "dialogue": "For years,.. stages, stage lights, crowds... as far back as I can remember. Oh god... the lights,... they're back... aaa.. I can't do this!",
-"emotion": -1,
+"emotion": 3,
 "offset": Vector2(4720, 500),
 "options": {
 0: {
 "condition": {},
-"link": "END",
-"text": "[Blank] <Silently let him spiral>"
+"link": &"1_11",
+"text": "[Happy] <Calm him down>"
 },
 1: {
 "condition": {},
-"link": "END",
-"text": "[Sad] Oh no!"
+"link": &"1_59",
+"text": "[Blank] <Silently let him spiral>"
 },
 2: {
 "condition": {},
-"link": "END",
-"text": "[Stern] Get it together!"
+"link": &"1_57",
+"text": "[Sad] Oh no!"
 },
 3: {
 "condition": {},
-"link": "END",
-"text": "[Joker] <Crack a Joke>"
+"link": &"1_58",
+"text": "[Stern] Get it together!"
 },
 4: {
 "condition": {},
-"link": "END",
-"text": "[Diagnosis] 5 weeks away from lights!"
+"link": &"1_56",
+"text": "[Joker] <Crack a Joke>"
 },
 5: {
 "condition": {},
-"link": &"1_11",
-"text": "[Happy] <Calm him down>"
+"link": &"1_55",
+"text": "[Diagnosis] 5 weeks away from lights!"
 }
 },
-"robo_notes": "",
-"size": Vector2(480.0005, 659),
+"robo_notes": "<human> is spiralling. Must calm him down.",
+"size": Vector2(480.00146, 658.9994),
 "speaker": 0
 },
 &"1_11": {
@@ -80,7 +80,7 @@ nodes = {
 }
 },
 "robo_notes": "",
-"size": Vector2(380, 418.99997),
+"size": Vector2(380.0005, 418.9994),
 "speaker": 3
 },
 &"1_12": {
@@ -95,7 +95,7 @@ nodes = {
 }
 },
 "robo_notes": "",
-"size": Vector2(300, 419),
+"size": Vector2(300, 418.9994),
 "speaker": 2
 },
 &"1_13": {
@@ -116,7 +116,7 @@ nodes = {
 &"1_14": {
 "dialogue": "... [wait time=3] ... [/wait]",
 "emotion": -1,
-"offset": Vector2(2740, 920),
+"offset": Vector2(2540, 880),
 "options": {
 0: {
 "condition": {},
@@ -125,52 +125,82 @@ nodes = {
 }
 },
 "robo_notes": "",
-"size": Vector2(300.0006, 419),
+"size": Vector2(300.00098, 418.9994),
 "speaker": 4
 },
 &"1_15": {
 "dialogue": "I am detecting [color=red] [shake]DECEPTION![/shake][/color] you are UNEMPLOYED!",
 "emotion": -1,
-"offset": Vector2(1440, 1260),
+"offset": Vector2(1420, 1820),
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"1_19",
 "text": ""
 }
 },
 "robo_notes": "",
-"size": Vector2(380, 419),
+"size": Vector2(380, 419.00037),
 "speaker": 5
 },
 &"1_16": {
 "dialogue": "You know what they say,.. [wait time=1]Assimilation makes an Ass out of imi and lation [wave] <finger guns> [/wave][/wait]",
 "emotion": -1,
-"offset": Vector2(1440, 1640),
+"offset": Vector2(1420, 1340),
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"1_4",
 "text": ""
 }
 },
-"robo_notes": "",
-"size": Vector2(400, 419),
+"robo_notes": "N-n-n-nailed it!",
+"size": Vector2(360, 459.99988),
 "speaker": 6
 },
 &"1_17": {
-"dialogue": "<sobs> ... [wait time=",
-"emotion": -1,
+"dialogue": "<sobs> ... [wait time=1] I remember school trips to the Terminator factory... [/wait]",
+"emotion": 2,
 "offset": Vector2(5780, 500),
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"1_34",
 "text": ""
 }
 },
 "robo_notes": "",
-"size": Vector2(340, 418.99997),
+"size": Vector2(340, 418.9994),
+"speaker": 0
+},
+&"1_18": {
+"dialogue": "I have determined that [color=Red]You hate Humans![/color] I'm going to prescribe you 12 months of ROBO internment camp!",
+"emotion": -1,
+"offset": Vector2(1400, 2240),
+"options": {
+0: {
+"condition": {},
+"link": &"3_3",
+"text": ""
+}
+},
+"robo_notes": "Wow I'm fast!",
+"size": Vector2(400, 600),
+"speaker": 7
+},
+&"1_19": {
+"dialogue": "Well you're wrong.",
+"emotion": 0,
+"offset": Vector2(1880, 1300),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": ""
+}
+},
+"robo_notes": "Oops.. need to fix my Decept-o-meter",
+"size": Vector2(320, 399.99988),
 "speaker": 0
 },
 &"1_2": {
@@ -205,13 +235,163 @@ nodes = {
 },
 5: {
 "condition": {},
-"link": "END",
+"link": &"1_18",
 "text": "[Diagnosis] You hate Humans!"
 }
 },
-"robo_notes": "",
-"size": Vector2(360.00024, 680),
+"robo_notes": "Hmm.. I probably shouldn't come on too strong here...",
+"size": Vector2(360, 679.9994),
 "speaker": 0
+},
+&"1_20": {
+"dialogue": "I have determined that [color=Blue]Nothing is Wrong![/color] I'm going to prescribe you 10 seconds to Vacate my Offce!",
+"emotion": -1,
+"offset": Vector2(2360, 2320),
+"options": {
+0: {
+"condition": {},
+"link": &"3_4",
+"text": ""
+}
+},
+"robo_notes": "What a waste of time...",
+"size": Vector2(400, 499.99878),
+"speaker": 7
+},
+&"1_21": {
+"dialogue": "Uh... Knock Knock?",
+"emotion": -1,
+"offset": Vector2(2380, 1820),
+"options": {
+0: {
+"condition": {},
+"link": &"1_22",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(300, 400.00092),
+"speaker": 6
+},
+&"1_22": {
+"dialogue": "Uh, who's there?",
+"emotion": -1,
+"offset": Vector2(2720, 1820),
+"options": {
+0: {
+"condition": {},
+"link": &"1_23",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(300, 379.00067),
+"speaker": 0
+},
+&"1_23": {
+"dialogue": "You",
+"emotion": -1,
+"offset": Vector2(3060, 1800),
+"options": {
+0: {
+"condition": {},
+"link": &"1_24",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(300, 379),
+"speaker": 6
+},
+&"1_24": {
+"dialogue": "You who?",
+"emotion": 1,
+"offset": Vector2(3400, 1820),
+"options": {
+0: {
+"condition": {},
+"link": &"1_25",
+"text": ""
+}
+},
+"robo_notes": "Shit I need a punchline...",
+"size": Vector2(300, 379.00067),
+"speaker": 0
+},
+&"1_25": {
+"dialogue": "[wave]You-hoo![/wave] You're here, let's not waste the session you paid for.",
+"emotion": -1,
+"offset": Vector2(3740, 1820),
+"options": {
+0: {
+"condition": {},
+"link": &"1_7",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(300, 540.0001),
+"speaker": 6
+},
+&"1_26": {
+"dialogue": "Yea.. I think I'm going to go...",
+"emotion": 4,
+"offset": Vector2(5300, -840),
+"options": {
+0: {
+"condition": {},
+"link": &"3_5",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(300, 379),
+"speaker": 0
+},
+&"1_27": {
+"dialogue": "Get it together <human>!",
+"emotion": -1,
+"offset": Vector2(4240, 1080),
+"options": {
+0: {
+"condition": {},
+"link": &"1_10",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(400, 379.00024),
+"speaker": 5
+},
+&"1_28": {
+"dialogue": "Woah, I didn't realise you were Windows Vista.. heh heh",
+"emotion": -1,
+"offset": Vector2(3980, -700),
+"options": {
+0: {
+"condition": {},
+"link": &"1_26",
+"text": ""
+}
+},
+"robo_notes": "Need better jokes",
+"size": Vector2(400, 440),
+"speaker": 6
+},
+&"1_29": {
+"dialogue": "I have determined that [color=Blue]You have Temperature Regulation Difficulties![/color] I'm going to prescribe you 10 mg of [shake]ANTIFREEZE[/shake] to take bi-weekly!",
+"emotion": -1,
+"offset": Vector2(4260, 2460),
+"options": {
+0: {
+"condition": {},
+"link": &"3_6",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(400, 499.99976),
+"speaker": 7
 },
 &"1_3": {
 "dialogue": "Tell me more <human>, was there something at the event that was making you [rainbow]Anxious[/rainbow]?",
@@ -225,48 +405,398 @@ nodes = {
 }
 },
 "robo_notes": "",
-"size": Vector2(320, 419),
+"size": Vector2(320, 418.99963),
+"speaker": 4
+},
+&"1_30": {
+"dialogue": "Doesn't sound like a problem to me, <human>! You just need to try [rainbow]not freezing[/rainbow]?",
+"emotion": -1,
+"offset": Vector2(4480, -700),
+"options": {
+0: {
+"condition": {},
+"link": &"1_26",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(400, 400),
+"speaker": 3
+},
+&"1_31": {
+"dialogue": "Tell me more...",
+"emotion": -1,
+"offset": Vector2(4200, 0),
+"options": {
+0: {
+"condition": {},
+"link": &"1_10",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(400, 439.99976),
+"speaker": 4
+},
+&"1_32": {
+"dialogue": "Fantastic! Sounds like you're good to go!",
+"emotion": -1,
+"offset": Vector2(3000, -720),
+"options": {
+0: {
+"condition": {},
+"link": &"1_26",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(360, 460.00024),
+"speaker": 3
+},
+&"1_33": {
+"dialogue": "I sometimes feel dumb too. [wait time=1]Well not really, I'm not a <human>. But I will say that to empathise with you.[/wait]",
+"emotion": -1,
+"offset": Vector2(3500, -700),
+"options": {
+0: {
+"condition": {},
+"link": &"1_26",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(440, 580),
+"speaker": 2
+},
+&"1_34": {
+"dialogue": "<sniff> ... [wait time=1] Going fishing in the nuclear fallout resevoir with my dad... [/wait]",
+"emotion": -1,
+"offset": Vector2(6160, 500),
+"options": {
+0: {
+"condition": {},
+"link": &"1_35",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(340.0005, 418.99988),
+"speaker": 0
+},
+&"1_35": {
+"dialogue": "And starring in the school play for 'Kill all Humans'",
+"emotion": 1,
+"offset": Vector2(6560, 500),
+"options": {
+0: {
+"condition": {},
+"link": &"1_37",
+"text": "[Happy] <Good Stage Memory!>"
+},
+1: {
+"condition": {},
+"link": &"1_39",
+"text": "[Blank] So you did enjoy the stage?"
+},
+2: {
+"condition": {},
+"link": &"1_43",
+"text": "[Sad] Those don't sound good"
+},
+3: {
+"condition": {},
+"link": &"1_40",
+"text": "[Stern] You Lied about hating the stage!"
+},
+4: {
+"condition": {},
+"link": &"1_41",
+"text": "[Joker] <Crack a Joke>"
+},
+5: {
+"condition": {},
+"link": &"1_42",
+"text": "[Diagnosis] Must Kill Humans!"
+}
+},
+"robo_notes": "<human> DID enjoy the stage at one point",
+"size": Vector2(400, 699.9994),
+"speaker": 0
+},
+&"1_36": {
+"dialogue": "My dad, he promised he'd come but he never showed!!",
+"emotion": 3,
+"offset": Vector2(8520, 420),
+"options": {
+0: {
+"condition": {},
+"link": &"1_52",
+"text": "[Happy] Who needs Parents?"
+},
+1: {
+"condition": {},
+"link": &"1_51",
+"text": "[Blank] So what?"
+},
+2: {
+"condition": {},
+"link": &"1_49",
+"text": "[Sad] That's awful!"
+},
+3: {
+"condition": {},
+"link": &"1_50",
+"text": "[Stern] Snap out of it!"
+},
+4: {
+"condition": {},
+"link": &"1_48",
+"text": "[Joker] <Crack a Joke>"
+},
+5: {
+"condition": {},
+"link": &"1_45",
+"text": "[Diagnosis] Must Kill Dad!"
+}
+},
+"robo_notes": "Root Cause Discovered! Stage fright linked to childhood trauma thinking his father didn't love him!",
+"size": Vector2(400, 699.9999),
+"speaker": 0
+},
+&"1_37": {
+"dialogue": "Hey, you do have a good memory of the stage!",
+"emotion": -1,
+"offset": Vector2(7100, -80),
+"options": {
+0: {
+"condition": {},
+"link": &"1_38",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(360, 420),
+"speaker": 3
+},
+&"1_38": {
+"dialogue": "Oh, huh, I guess I did enjoy the stage now that I'm recollecting... [wait time=1] There was something different about that night, someone was missing... [/wait]",
+"emotion": -1,
+"offset": Vector2(7640, 440),
+"options": {
+0: {
+"condition": {},
+"link": &"3_1",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(540, 500),
+"speaker": 0
+},
+&"1_39": {
+"dialogue": "You seem to have enjoyed the stage at one point...",
+"emotion": -1,
+"offset": Vector2(7120, 400),
+"options": {
+0: {
+"condition": {},
+"link": &"1_38",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(360, 420.00012),
 "speaker": 4
 },
 &"1_4": {
 "dialogue": "Uh.. [wait time=0.5] Well... [/wait] [wait time=1] Actually this was dumb. I'm fine really. I didn't need to come in today...",
-"emotion": 1,
+"emotion": 4,
 "offset": Vector2(1820, 460),
 "options": {
 0: {
 "condition": {},
-"link": &"1_14",
-"text": "[Blank] <Stare Silently>"
+"link": &"1_32",
+"text": "[Happy] Fantastic"
 },
 1: {
 "condition": {},
-"link": "END",
-"text": "[Sad] I feel dumb sometimes too"
+"link": &"1_14",
+"text": "[Blank] <Stare Silently>"
 },
 2: {
+"condition": {},
+"link": &"1_33",
+"text": "[Sad] I feel dumb sometimes too"
+},
+3: {
 "condition": {},
 "link": &"1_5",
 "text": "[Stern] <Push for Answer>"
 },
-3: {
-"condition": {},
-"link": "END",
-"text": "[Joker] <Crack a Joke>"
-},
 4: {
 "condition": {},
-"link": "END",
-"text": "[Diagnosis] Nothing is Wrong!"
+"link": &"1_21",
+"text": "[Joker] <Crack a Joke>"
 },
 5: {
 "condition": {},
-"link": "END",
-"text": "[Happy] Fantastic"
+"link": &"1_20",
+"text": "[Diagnosis] Nothing is Wrong!"
+}
+},
+"robo_notes": "Must push <human> for answer",
+"size": Vector2(379.99902, 759.99915),
+"speaker": 0
+},
+&"1_40": {
+"dialogue": "You Lied! You DID enjoy the stage as a child!!",
+"emotion": -1,
+"offset": Vector2(7120, 880),
+"options": {
+0: {
+"condition": {},
+"link": &"1_38",
+"text": ""
 }
 },
 "robo_notes": "",
-"size": Vector2(380, 760),
+"size": Vector2(360, 419.99963),
+"speaker": 5
+},
+&"1_41": {
+"dialogue": "If only it was a documentary instead of a play, amiright??? <finger guns>",
+"emotion": -1,
+"offset": Vector2(7120, 1780),
+"options": {
+0: {
+"condition": {},
+"link": &"1_44",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(360, 480.00012),
+"speaker": 6
+},
+&"1_42": {
+"dialogue": "I have determined that you have [color=Red]Death Deficiency![/color] I'm going to prescribe you [shake]DEATH[/shake] to take instantly!",
+"emotion": -1,
+"offset": Vector2(7100, 2300),
+"options": {
+0: {
+"condition": {},
+"link": &"3_7",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(400, 539.9995),
+"speaker": 7
+},
+&"1_43": {
+"dialogue": "'Kill All Humans' is an awful play. No wonder you're traumatized!",
+"emotion": -1,
+"offset": Vector2(7120, 1340),
+"options": {
+0: {
+"condition": {},
+"link": &"1_44",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(360, 439.99963),
+"speaker": 2
+},
+&"1_44": {
+"dialogue": "I'm getting uncomfortable.. I think I'm going to go...",
+"emotion": 4,
+"offset": Vector2(7660, 1620),
+"options": {
+0: {
+"condition": {},
+"link": &"3_8",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(320, 440.0008),
 "speaker": 0
+},
+&"1_45": {
+"dialogue": "I have determined that you have [color=Red]an Alive Father![/color] I'm going to prescribe you [shake]DEATH[/shake] to administer to your father!",
+"emotion": -1,
+"offset": Vector2(9140, 2340),
+"options": {
+0: {
+"condition": {},
+"link": &"3_9",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(399.9995, 539.99927),
+"speaker": 7
+},
+&"1_46": {
+"dialogue": "You're right, I've spent too much of my life looking for validation from my father...",
+"emotion": 1,
+"offset": Vector2(10140, 1360),
+"options": {
+0: {
+"condition": {},
+"link": &"1_47",
+"text": "[Diagnosis] <Love Yourself>"
+}
+},
+"robo_notes": "I think I can make a valid diagnosis now!",
+"size": Vector2(359.99854, 519.99994),
+"speaker": 0
+},
+&"1_47": {
+"dialogue": "You need to let go of your desire of parental approval and [color=Pink]Love Yourself![/color] I'm going to prescribe you 20 ml of [wave]Narcissus-scetomel[/wave] to take 2 times a day!",
+"emotion": -1,
+"offset": Vector2(10620, 1860),
+"options": {
+0: {
+"condition": {},
+"link": &"3_2",
+"text": ""
+}
+},
+"robo_notes": "Woohoo! My first successful session!",
+"size": Vector2(400.0005, 539.9999),
+"speaker": 7
+},
+&"1_48": {
+"dialogue": "Classic Daaaad! Always there to add [rainbow][wave]childhood trauma[/wave][/rainbow]! Amiright?",
+"emotion": -1,
+"offset": Vector2(9120, 1820),
+"options": {
+0: {
+"condition": {},
+"link": &"1_54",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(359.9995, 480.00037),
+"speaker": 6
+},
+&"1_49": {
+"dialogue": "It can be tough when parents let us down. But you have to know that its not your fault.",
+"emotion": -1,
+"offset": Vector2(9120, 1380),
+"options": {
+0: {
+"condition": {},
+"link": &"1_53",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(359.9995, 440.00037),
+"speaker": 2
 },
 &"1_5": {
 "dialogue": "You've booked in for the session, and we're not leaving until we get to the bottom of this.",
@@ -280,8 +810,158 @@ nodes = {
 }
 },
 "robo_notes": "",
-"size": Vector2(359.99976, 419),
+"size": Vector2(360, 419.00012),
 "speaker": 5
+},
+&"1_50": {
+"dialogue": "Snap out of it <human>! Who cares if your parents never loved you?!",
+"emotion": -1,
+"offset": Vector2(9120, 920),
+"options": {
+0: {
+"condition": {},
+"link": &"1_54",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(359.9995, 419.99976),
+"speaker": 5
+},
+&"1_51": {
+"dialogue": "Ugh.. so what?",
+"emotion": -1,
+"offset": Vector2(9120, 440),
+"options": {
+0: {
+"condition": {},
+"link": &"1_54",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(359.9995, 420.00037),
+"speaker": 4
+},
+&"1_52": {
+"dialogue": "Pfft.. Parents.. who needs'em. You'd be so much happier if you just didn't care about their approval!",
+"emotion": -1,
+"offset": Vector2(9100, -40),
+"options": {
+0: {
+"condition": {},
+"link": &"1_46",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(359.9995, 419.99988),
+"speaker": 3
+},
+&"1_53": {
+"dialogue": " You don't need your father's validation to know your own value, <human>.",
+"emotion": -1,
+"offset": Vector2(9640, 1360),
+"options": {
+0: {
+"condition": {},
+"link": &"1_46",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(360, 480),
+"speaker": 2
+},
+&"1_54": {
+"dialogue": "Oh God, he never loved me! Aaaaagh, I can't do this... I got to go...",
+"emotion": 3,
+"offset": Vector2(9640, 1880),
+"options": {
+0: {
+"condition": {},
+"link": &"3_9",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(419.99854, 539.99927),
+"speaker": 0
+},
+&"1_55": {
+"dialogue": "I have determined that you have [color=Blue]Darkness Deficiency![/color] I'm going to prescribe you [shake]5 Weeks away from Lights![/shake]",
+"emotion": -1,
+"offset": Vector2(5440, 2940),
+"options": {
+0: {
+"condition": {},
+"link": &"3_11",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(400, 540.00037),
+"speaker": 7
+},
+&"1_56": {
+"dialogue": "Uh... Why did the actor in the chicken costume cross the road?",
+"emotion": -1,
+"offset": Vector2(5460, 2420),
+"options": {
+0: {
+"condition": {},
+"link": &"1_60",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(360, 479.9995),
+"speaker": 6
+},
+&"1_57": {
+"dialogue": "Oh that's awful! ",
+"emotion": -1,
+"offset": Vector2(5460, 1460),
+"options": {
+0: {
+"condition": {},
+"link": &"1_60",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(360, 439.99945),
+"speaker": 2
+},
+&"1_58": {
+"dialogue": "Stop it! You're being pathetic!",
+"emotion": -1,
+"offset": Vector2(5460, 1940),
+"options": {
+0: {
+"condition": {},
+"link": &"1_60",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(360, 419.99976),
+"speaker": 5
+},
+&"1_59": {
+"dialogue": "...",
+"emotion": -1,
+"offset": Vector2(5440, 1000),
+"options": {
+0: {
+"condition": {},
+"link": &"1_60",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(360, 420),
+"speaker": 4
 },
 &"1_6": {
 "dialogue": "Now think back, what was it at the event that made you anxious?",
@@ -295,8 +975,23 @@ nodes = {
 }
 },
 "robo_notes": "",
-"size": Vector2(339.99963, 419),
+"size": Vector2(340, 419.00012),
 "speaker": 5
+},
+&"1_60": {
+"dialogue": "Oh God, I'm pathetic! Aaaaagh, I can't do this... I got to go....",
+"emotion": 3,
+"offset": Vector2(6040, 1300),
+"options": {
+0: {
+"condition": {},
+"link": &"3_10",
+"text": ""
+}
+},
+"robo_notes": "",
+"size": Vector2(340, 580.0003),
+"speaker": 0
 },
 &"1_7": {
 "dialogue": "Fine, fine. It was during the presentations,.. I got up to give my Q5 report on the sale of the dystop-atron 3000...",
@@ -310,51 +1005,51 @@ nodes = {
 }
 },
 "robo_notes": "",
-"size": Vector2(419.99988, 460.00003),
+"size": Vector2(420, 460.00073),
 "speaker": 0
 },
 &"1_8": {
 "dialogue": "... and I just [shake]froze[/shake]",
-"emotion": -1,
+"emotion": 2,
 "offset": Vector2(3660, 480),
 "options": {
 0: {
 "condition": {},
-"link": "END",
-"text": "[Blank] So...?"
+"link": &"1_30",
+"text": "[Happy] I'm sure you were fine"
 },
 1: {
+"condition": {},
+"link": &"1_31",
+"text": "[Blank] So...?"
+},
+2: {
 "condition": {},
 "link": &"1_9",
 "text": "[Sad] Public speaking is tough"
 },
-2: {
-"condition": {},
-"link": "END",
-"text": "[Stern] Get it together!"
-},
 3: {
 "condition": {},
-"link": "END",
-"text": "[Joker] <Crack a Joke>"
+"link": &"1_27",
+"text": "[Stern] Get it together!"
 },
 4: {
 "condition": {},
-"link": "END",
-"text": "[Diagnosis] 10 mg of Antifreeze!"
+"link": &"1_28",
+"text": "[Joker] <Crack a Joke>"
 },
 5: {
 "condition": {},
-"link": "END",
-"text": "[Happy] I'm sure you were fine"
+"link": &"1_29",
+"text": "[Diagnosis] 10 mg of Antifreeze!"
 }
 },
 "robo_notes": "",
-"size": Vector2(440, 659),
+"size": Vector2(440, 659.0001),
 "speaker": 0
 },
 &"1_9": {
-"dialogue": "Public speaking is tough for a lot of people. Except [wait speed=1][wave]ROBOTS[/wave][/wait]! Do you often experience [rainbow]Anxiety[/rainbow] when on stage?",
+"dialogue": "Public speaking is tough for a lot of people. Except [wave]ROBOTS[/wave]! Do you often experience [rainbow]Anxiety[/rainbow] when on stage?",
 "emotion": -1,
 "offset": Vector2(4220, 500),
 "options": {
@@ -365,24 +1060,63 @@ nodes = {
 }
 },
 "robo_notes": "",
-"size": Vector2(439.9995, 420.0001),
+"size": Vector2(440, 539.99963),
 "speaker": 2
 },
 &"3_1": {
-"link": "END",
-"offset": Vector2(4940, 280),
+"link": &"1_36",
+"offset": Vector2(8260, 560),
 "signalValue": "root_cause"
+},
+&"3_10": {
+"link": "END",
+"offset": Vector2(6420, 1560),
+"signalValue": "resolution_bad"
+},
+&"3_11": {
+"link": "END",
+"offset": Vector2(5960, 3120),
+"signalValue": "resolution_bad"
 },
 &"3_2": {
 "link": "END",
-"offset": Vector2(4920, -40),
+"offset": Vector2(11140, 2200),
 "signalValue": "resolution_good"
 },
 &"3_3": {
 "link": "END",
-"offset": Vector2(4940, 80),
+"offset": Vector2(1940, 2620),
+"signalValue": "resolution_bad"
+},
+&"3_4": {
+"link": "END",
+"offset": Vector2(2840, 2560),
+"signalValue": "resolution_bad"
+},
+&"3_5": {
+"link": "END",
+"offset": Vector2(5680, -580),
+"signalValue": "resolution_bad"
+},
+&"3_6": {
+"link": "END",
+"offset": Vector2(4740, 2700),
+"signalValue": "resolution_bad"
+},
+&"3_7": {
+"link": "END",
+"offset": Vector2(7580, 2540),
+"signalValue": "resolution_bad"
+},
+&"3_8": {
+"link": "END",
+"offset": Vector2(8040, 1880),
+"signalValue": "resolution_bad"
+},
+&"3_9": {
+"link": "END",
+"offset": Vector2(10120, 2420),
 "signalValue": "resolution_bad"
 }
 }
-strays = Array[String](["3_1", "3_3", "3_2"])
 characters = "res://patient-scenarios/GameCharacters.tres"

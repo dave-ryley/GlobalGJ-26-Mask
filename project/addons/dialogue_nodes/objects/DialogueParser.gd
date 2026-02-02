@@ -86,7 +86,7 @@ func stop():
 func select_option(idx : int):
 	if not _running: return
 	
-	if _option_links.size() == 0 or idx > _option_links.size():
+	if _option_links.size() == 0 or idx >= _option_links.size():
 		printerr('Option idx ', idx, ' is not selectable.')
 		return
 	
@@ -133,7 +133,9 @@ func _process_dialogue(dict : Dictionary):
 		speaker = characters[dict.speaker]
 	
 	var dialogue_text = _parse_variables(dict.dialogue)
-	var robo_notes_text = _parse_variables(dict.robo_notes)
+	var robo_notes_text
+	if dict.has('robo_notes'):
+		robo_notes_text = _parse_variables(dict.robo_notes)
 	
 	var option_texts : Array[String] = []
 	_option_links.clear()
@@ -141,8 +143,12 @@ func _process_dialogue(dict : Dictionary):
 		if option.condition.is_empty() or _check_condition(option.condition):
 			option_texts.append(_parse_variables(option.text))
 			_option_links.append(option.link)
+			
+	var emotion
+	if dict.has('emotion'):
+		emotion = dict.emotion
 	
-	dialogue_processed.emit(speaker, dialogue_text, option_texts, dict.emotion, robo_notes_text)
+	dialogue_processed.emit(speaker, dialogue_text, option_texts, emotion, robo_notes_text)
 
 
 # Processes the signal node data (dict).

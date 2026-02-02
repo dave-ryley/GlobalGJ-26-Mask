@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bnlbbclcttcav"
+path="res://.godot/imported/robot sad.mp3-c1e070c67f9e1d2bb3ecdd701e37b166.mp3str"
+
+[deps]
+
+source_file="res://audio/robot sad.mp3"
+dest_files=["res://.godot/imported/robot sad.mp3-c1e070c67f9e1d2bb3ecdd701e37b166.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://8gdtpn3tnpob"
+path="res://.godot/imported/robot diagnosis.mp3-97ea07c90e2a1f5f20c2d9bb57b72008.mp3str"
+
+[deps]
+
+source_file="res://audio/robot diagnosis.mp3"
+dest_files=["res://.godot/imported/robot diagnosis.mp3-97ea07c90e2a1f5f20c2d9bb57b72008.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

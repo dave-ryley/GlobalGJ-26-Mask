@@ -25,6 +25,7 @@ var timer_callback : Callable
 @onready var robo_notes_container = $Control/ColorRect/ScrollContainer/RoboNotesContainer
 @onready var typewriter_scroll = $Control/ColorRect/ScrollContainer
 @onready var typewriter_audio = $TypewriterAudio
+@onready var typing_fingers_animation = $TypingAnimation
 @onready var character_audio = $CharacterAudio
 
 var robo_type_alpha = 0
@@ -58,6 +59,7 @@ func _process(delta: float) -> void:
 			typewriter_scroll.scroll_vertical = 1000000000
 			if robo_type_alpha >= 1:
 				typewriter_audio.stop()
+				typing_fingers_animation.stop()
 	
 func try_setup_scenario(index : int) -> bool:
 	if scenarios.size() > index :
@@ -130,6 +132,8 @@ func _on_robo_notes_start(notes: String) -> void:
 			
 	typewriter_audio.stop()
 	typewriter_audio.play(0)
+	typing_fingers_animation.stop()
+	typing_fingers_animation.play("Typing")
 	var new_robo_notes = RichTextLabel.new()
 	robo_notes_container.add_child(new_robo_notes)
 	new_robo_notes.theme = robo_notes_theme
